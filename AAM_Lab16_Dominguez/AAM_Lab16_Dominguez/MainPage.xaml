@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AAM_Lab16_Dominguez.MainPage">
+
+    <StackLayout>
+        <Button Text="Buscar Lugares" Clicked="Button_Clicked" ></Button>
+        <ListView x:Name="listViewDemo" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Padding="10">
+                                <Frame CornerRadius="10" Padding="0">
+                                    <Image Source="{Binding image_url}" Aspect="AspectFill"></Image>
+                                </Frame>
+                                <StackLayout Padding="5">
+                                    <Label Text="{Binding name}" FontSize="Medium"></Label>
+                                    <Label Text="{Binding location}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
